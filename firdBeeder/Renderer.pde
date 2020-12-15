@@ -37,7 +37,7 @@ class Renderer {
     currentLayer = n;
   }
   
-  void drawSprite(int index, float x, int y, int sw, int sh, float w, float h) {
+  void drawSprite(int index, float x, float y, int sw, int sh, float w, float h) {
     int layer = currentLayer;
     currentLayer = -1; // reset currentLayer to default
     
