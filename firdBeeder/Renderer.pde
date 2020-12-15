@@ -37,7 +37,7 @@ class Renderer {
     currentLayer = n;
   }
   
-  void drawSprite(int index, float x, float y, int sw, int sh, float w, float h) {
+  void drawSprite(int index, float x, float y, int sw, int sh, float w, float h, boolean mirrored) {
     int layer = currentLayer;
     currentLayer = -1; // reset currentLayer to default
     
@@ -48,7 +48,10 @@ class Renderer {
     if(layer >= buffer.size()) layer = buffer.size()-1; // keep layer in bounds
     if(layer < 0) layer = 0;
     
-    buffer.get(layer).add(new Sprite(index, x, y, sw, sh, w, h)); // add a new sprite object
+    else buffer.get(layer).add(new Sprite(index, x, y, sw, sh, w, h, mirrored)); // add a new sprite object
+  }
+  void drawSprite(int index, float x, float y, int sw, int sh, float w, float h) {
+    drawSprite(index, x, y, sw, sh, w, h, false);
   }
   
   void clear(int R, int G, int B) {
