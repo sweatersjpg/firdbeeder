@@ -30,8 +30,8 @@ void draw() {
 
 void mousePressed() {
   if (mouseButton == LEFT) {
-    for(int i = 0; i < 3; i++) game.seeds.add(new Seed(mouseX, mouseY, 1));
+    for(int i = 0; i < 3; i++) game.seeds.add(new Seed(game.mouse.x, game.mouse.y, 1));
   } else if (mouseButton == RIGHT) {
-    game.birds.add(new Bird(mouseX, mouseY));
+    game.birds.add(new Bird());
   }
 }

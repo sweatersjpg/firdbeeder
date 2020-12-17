@@ -12,5 +12,5 @@ class Sprite {
     x = X; y = Y;
     w = W; h = H;
   }
-  void draw() { image(spriteSheet, x, y, w, h, sx, sy, sw, sh); } // actually draws the image to the screen 
+  void draw() { image(spriteSheet, x - game.camera.x, y - game.camera.y, w, h, sx, sy, sw, sh); } // actually draws the image to the screen 
 }

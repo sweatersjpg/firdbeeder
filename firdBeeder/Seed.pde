@@ -17,11 +17,7 @@ class Seed {
   }
 
   void draw() {
-    //rectMode(CENTER);
-    //fill(255);
-    //noStroke();
-    //rect(pos.x, pos.y, width, width);
-    
+    R.setLayer((int)map(pos.y - game.camera.y, 0, width, 0, R.buffer.size())); // sets layer bassed on actual position (not just on screen position)
     R.drawSprite(10, pos.x - 6, pos.y - 5 - H, 6, 5, 6*2 * S, 5*2 * S);
   }
 
