@@ -114,8 +114,8 @@ class Bird {
       mt+=0.4;
       frame = (int)(3 + mt%4);
     }
-
-    R.setLayer((int)map(pos.y - game.camera.y, 0, width, 0, R.buffer.size())); // sets layer bassed on actual position (not just on screen position)
+    
+    R.setLayer((int)map(pos.y - game.camera.y, 0, height, 0, R.buffer.size() - 2)); // sets layer bassed on actual position (not just on screen position)
     R.drawSprite(frame, pos.x-8*2, pos.y-16*2 - H, 16, 16, 16*2, 16*2, dir); // draw the bird
   }
 

@@ -10,7 +10,7 @@ void setup() {
   
   game = new GameManager();
   
-  size(400,400);
+  size(400,500);
   smooth(0); // turns off image smoothing for clean pixel art
   frameRate(30);
 }
@@ -26,10 +26,14 @@ void draw() {
   textSize(32);
   fill(0);
   text(game.score, 350, 50);
+  
+  
 }
 
 void mousePressed() {
-  if (mouseButton == LEFT) {
-    for(int i = 0; i < 3; i++) game.seeds.add(new Seed(game.mouse.x, game.mouse.y, 1));
+  // if(has enough money)
+  if (mouseButton == LEFT && mouseY < height - 36) {
+    for(int i = 0; i < game.seedsPerClick; i++) game.seeds.add(new Seed(game.mouse.x, game.mouse.y, 1));
+    // game.money -= game.costPerSeed * game.seedsPerClick;
   }
 }

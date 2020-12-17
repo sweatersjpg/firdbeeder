@@ -42,7 +42,7 @@ class Renderer {
     currentLayer = -1; // reset currentLayer to default
     
     if(layer == -1) { // if current layer is set to default
-      layer = (int) map(y+h - game.camera.y, 0, width, 0, buffer.size()); // get layer bassed on ypos on the screen
+      layer = (int) map(y+h - game.camera.y, 0, height, 0, buffer.size()); // get layer bassed on ypos on the screen
     }
     
     if(layer >= buffer.size()) layer = buffer.size()-1; // keep layer in bounds
