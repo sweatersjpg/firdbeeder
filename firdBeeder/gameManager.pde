@@ -38,8 +38,6 @@ class GameManager {
     
     for(Seed s:seeds) s.draw(); //drawing Seeds with new positions
     for(Bird b:birds) b.draw(); //drawing Seeds with new positions
-    
-    println(birds.size());
-    
+        
   }
 }

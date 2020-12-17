@@ -16,10 +16,7 @@ class Background {
     
     image(bg, -x, -game.camera.y, W, H);
     image(bg, -x + W, -game.camera.y, W, H);
-    
-    rect(-x, -game.camera.y, 50, 50);
-    
-    println(game.camera.x, game.camera.y);
+
   }
 
   void update() {
