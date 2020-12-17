@@ -14,6 +14,8 @@ class GameManager {
     seeds = new ArrayList<Seed>(); //creates a list of Seed objects that can be added or subtracted from
     birds = new ArrayList<Bird>(); //creates a list of Bird objects that can be added or subtracted from
     background = new Background();
+    
+    //score begins at 0
     score = 0;
   }
   

@@ -22,6 +22,7 @@ void draw() {
   
   R.render(); // renders sprites
   
+  //display score
   textSize(32);
   fill(0);
   text(game.score, 350, 50);

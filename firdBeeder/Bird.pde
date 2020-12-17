@@ -122,7 +122,7 @@ class Bird {
       hunger -= 1;
       if(hunger == 0) {
         newState = "leave";
-        game.score = game.score + 1;
+        game.score = game.score + 1; //if a bird is satisfied from eating the seeds, then the score would increase
       }
     }
   }
