@@ -35,7 +35,7 @@ class Coin {
       if(pos.x < game.camera.x || pos.y > game.camera.y+height) {
         game.coins.remove(this);
         
-        // game.money += 5;
+        game.monies += game.moniesPerCoin;
         
         return;
       }

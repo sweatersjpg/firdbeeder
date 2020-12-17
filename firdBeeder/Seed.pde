@@ -12,7 +12,7 @@ class Seed {
     vel = new PVector(random(0,7),0).rotate(random(TAU));
     H = 50;
     vH = 0;
-    health = (int)random(4, 7);
+    health = (int)random(2, 4);
     
   }
 

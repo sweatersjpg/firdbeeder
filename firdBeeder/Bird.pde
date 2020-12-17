@@ -28,7 +28,7 @@ class Bird {
     H = 0;
     vH = 0;
 
-    hunger = (int) random(4, 7);
+    hunger = 3;
   }
 
   void update() {
@@ -55,12 +55,12 @@ class Bird {
         if (r < 0.04) newState = "target"; // 2% chance to wander
         if (r < 0.02) newState = "wander"; // 2% chance to target another
       }
-      if (game.seeds.size() == 0) if (r > 0.7) newState = "angry";
+      if (game.seeds.size() == 0 && !hasTarget) if (r > 0.7) newState = "angry";
     } else if (state == "wander") {
       if (oldState != state) { // runs on only the first frame of the state change
         vel = new PVector(birdSpeed, 0).rotate(random(0, TAU)); // pick random direction to move
       }
-      if (r < 0.03) newState = "idle"; // 3% chance to go idle
+      if (r < 0.1) newState = "idle"; // 3% chance to go idle
     } else if (state == "peck") {
       if (oldState != state) { // runs on only the first frame of the state change
         if (hasTarget) {
@@ -73,7 +73,8 @@ class Bird {
       else newState = "idle"; // if its 0 go back to idle 
     } else if (state == "target") {
       if (oldState != state) { // runs on only the first frame of the state change
-        targetSeed(); // target a new seed
+        if(!hasTarget) targetSeed(); // target a new seed
+        else newState = "idle";
       }
       if (hasTarget) if (pos.dist(target.pos) < 2) newState = "idle"; // if has a target and is pretty close turn idle
     } else if (state == "leave") {

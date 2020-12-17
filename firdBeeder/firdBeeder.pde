@@ -22,18 +22,13 @@ void draw() {
   
   R.render(); // renders sprites
   
-  //display score
-  textSize(32);
-  fill(0);
-  text(game.score, 350, 50);
-  
+  game.ui.drawText();
   
 }
 
 void mousePressed() {
-  // if(has enough money)
-  if (mouseButton == LEFT && mouseY < height - 36) {
+  if(game.costPerSeed * game.seedsPerClick <= game.monies && mouseButton == LEFT && mouseY < height - 36) {
     for(int i = 0; i < game.seedsPerClick; i++) game.seeds.add(new Seed(game.mouse.x, game.mouse.y, 1));
-    // game.money -= game.costPerSeed * game.seedsPerClick;
+    game.monies -= game.costPerSeed * game.seedsPerClick;
   }
 }

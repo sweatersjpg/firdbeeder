@@ -12,9 +12,12 @@ class GameManager {
   PVector mouse;
   
   int costPerSeed;
+  int moniesPerCoin;
   int seedsPerClick;
-  int money;
-  int level;
+  int monies;
+  //int level;
+  int upgradeCost;
+  int birdsPerSeed;
 
   int score;
 
@@ -30,8 +33,11 @@ class GameManager {
 
     seedsPerClick = 3;
     costPerSeed = 1;
-    money = 0;
-    level = 1;
+    monies = 3;
+    //level = 1;
+    upgradeCost = 20;
+    moniesPerCoin = 4;
+    birdsPerSeed = 3;
 
     //score begins at 0
     score = 0;
@@ -62,16 +68,16 @@ class GameManager {
   }
 
   void spawnCycle() { //initiates spawn parameters for the Bird class
-    if (seeds.size()/(birds.size()+1) > 5) { //activates the function when a certain number of seeds are generated: in this case, six
+    if (seeds.size()/(birds.size()+1) >= birdsPerSeed) { //activates the function when a certain number of seeds are generated: in this case, six
       birds.add(new Bird()); //when the six seeds have been created, spawns in a bird by calling in class Bird
     }
   }
-
-  void coinGrab() {
-    //if the mouse collides with the coin position
-    //send the coin to the bottom left using a PVector
-    //1 frame at a time
-    //if the coin collides with the bottom left PVector location
-    //despawn the coin
+  
+  void upgrade() {
+    monies -= upgradeCost;
+    seedsPerClick*=2;
+    upgradeCost*=2;
+    if(monies < costPerSeed*seedsPerClick) monies = costPerSeed*seedsPerClick;
   }
+
 }
