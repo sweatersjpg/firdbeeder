@@ -122,7 +122,7 @@ class Bird {
       hunger -= 1;
       if(hunger == 0) {
         newState = "leave";
-        // CODY increase score here :)
+        game.score = game.score + 1;
       }
     }
   }

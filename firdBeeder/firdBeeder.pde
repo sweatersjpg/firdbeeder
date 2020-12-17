@@ -21,6 +21,10 @@ void draw() {
   game.gameLoop();
   
   R.render(); // renders sprites
+  
+  textSize(32);
+  fill(0);
+  text(game.score, 350, 50);
 }
 
 void mousePressed() {

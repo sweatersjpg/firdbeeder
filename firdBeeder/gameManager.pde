@@ -8,13 +8,13 @@ class GameManager {
   ArrayList<Bird> birds;
   PVector world = new PVector();
   
-  // CODY add score variable here
+  int score;
   
   GameManager() {
     seeds = new ArrayList<Seed>(); //creates a list of Seed objects that can be added or subtracted from
     birds = new ArrayList<Bird>(); //creates a list of Bird objects that can be added or subtracted from
     background = new Background();
-    // CODY set score variable here
+    score = 0;
   }
   
   void gameLoop() {
