@@ -27,6 +27,8 @@ class GameManager {
     background.update(); //positioning the background image based on the movement of the mouse and prior positioning
     background.draw(); //calling the Background class to display the background image
     
+    spawnCycle();
+    
     mouse.set(mouseX, mouseY).add(camera);
     
     //if(mousePressed && frameCount%2==0) seeds.add(new Seed(mouseX, mouseY, 1));
@@ -39,5 +41,11 @@ class GameManager {
     for(Seed s:seeds) s.draw(); //drawing Seeds with new positions
     for(Bird b:birds) b.draw(); //drawing Seeds with new positions
         
+  }
+  
+  void spawnCycle() {
+    if(seeds.size()/(birds.size()+1) > 5) {
+      birds.add(new Bird());
+    }
   }
 }
