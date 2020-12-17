@@ -6,6 +6,7 @@ class GameManager {
   Background background; //calls the Background class for later use
   ArrayList<Seed> seeds; //initializes object array lists
   ArrayList<Bird> birds;
+  ArrayList<Coin> coins;
   PVector camera;
   PVector mouse;
   
@@ -17,6 +18,7 @@ class GameManager {
     
     seeds = new ArrayList<Seed>(); //creates a list of Seed objects that can be added or subtracted from
     birds = new ArrayList<Bird>(); //creates a list of Bird objects that can be added or subtracted from
+    coins = new ArrayList<Coin>();
     background = new Background();
     
     //score begins at 0
@@ -37,9 +39,11 @@ class GameManager {
     
     // we loop through birds backwards so they can delete themselves without error
     for(int i=birds.size()-1;i>=0;i--) birds.get(i).update(); //updating Bird positions based on velocities
+    for(int i=coins.size()-1;i>=0;i--) coins.get(i).update(); //updating coins position and checking mouse over
     
     for(Seed s:seeds) s.draw(); //drawing Seeds with new positions
     for(Bird b:birds) b.draw(); //drawing Seeds with new positions
+    for(Coin c:coins) c.draw(); //drawing Seeds with new positions
         
   }
   

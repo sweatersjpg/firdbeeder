@@ -127,6 +127,7 @@ class Bird {
       if (hunger == 0) { // if it has no hunger
         newState = "leave"; // set state to leave
         game.score = game.score + 1; //if a bird is satisfied from eating the seeds, then the score would increase
+        new Coin(pos);
       }
     }
   }
