@@ -8,10 +8,13 @@ class GameManager {
   ArrayList<Bird> birds;
   PVector world = new PVector();
   
+  // CODY add score variable here
+  
   GameManager() {
     seeds = new ArrayList<Seed>(); //creates a list of Seed objects that can be added or subtracted from
     birds = new ArrayList<Bird>(); //creates a list of Bird objects that can be added or subtracted from
-    background = new Background();  
+    background = new Background();
+    // CODY set score variable here
   }
   
   void gameLoop() {
@@ -24,5 +27,6 @@ class GameManager {
     for(Bird b:birds) b.update(); //updating Bird positions based on velocities
     for(Seed s:seeds) s.draw(); //drawing Seeds with new positions
     for(Bird b:birds) b.draw(); //drawing Seeds with new positions
+    
   }
 }

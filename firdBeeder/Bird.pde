@@ -79,7 +79,8 @@ class Bird {
       }
     } else if(state == "leave") {
       vH = 8;
-      vel.set(8,0);
+      if(dir) vel.set(-8,0);
+      else vel.set(8,0);
     } else if(state == "angry") {
       if(r < 0.4) {
         PVector dir = new PVector(mouseX, mouseY).sub(pos).setMag(birdSpeed*2);
@@ -121,6 +122,7 @@ class Bird {
       hunger -= 1;
       if(hunger == 0) {
         newState = "leave";
+        // CODY increase score here :)
       }
     }
   }
@@ -138,6 +140,7 @@ class Bird {
     // but it still picks game.seeds a little bit closer to itself
     for(int i = 0; i < game.seeds.size()/2; i++) {
       Seed s = game.seeds.get((int)random(game.seeds.size())); // gets random seed
+      if(s.H != 0) continue;
       float distS = pos.dist(s.pos); // gets dist to new seed
       float distT = pos.dist(target.pos); // gets dist to current seed
       if(distS < distT) target = s; // if its smaller set new current seed
