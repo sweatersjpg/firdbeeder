@@ -1,3 +1,16 @@
+/*
+
+FIRD BEEDER by
+Chris, Cody, Raul, and Sam
+
+A lot of this is uncommented because I ran out of time adding extra features
+
+click to place seeds and watch the magic happen, it starts slow but has an exponential progression
+
+*/
+
+
+
 PImage spriteSheet;
 Renderer R;
 GameManager game;
