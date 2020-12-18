@@ -34,13 +34,13 @@ class Bird {
   void update() {
     pos.add(vel);
     H += vH;
-    vH -= GRAV/2;
+    vH -= 0.5;
 
     if (H <= 0) {
       vH = 0;
       H = 0;
     }
-
+    
     newState = state;
     float r = random(1); // picks a random number between 0 and 1;
 
@@ -99,7 +99,7 @@ class Bird {
   }
 
   void draw() {
-    if (hasTarget) target.draw(); // draw the target seed to the screen if it has one (since it was removed from seed list)
+    if (hasTarget) target.draw(); // draws and updates the target seed to the screen if it has one (since it was removed from seed list)
 
     if (vel.x > 0) dir = false; // adjust direction based on x velicity
     if (vel.x < 0) dir = true;
@@ -162,6 +162,7 @@ class Bird {
     if (pos.dist(target.pos) > 60) vH = 6; // if target is far fly a bit
 
     vel.set(target.pos.copy().sub(pos).setMag(birdSpeed));
+    target.vel.set(0,0);
     game.seeds.remove(target); // removes the target seed from the seed list so that no other birds can target it
     hasTarget = true;
   }

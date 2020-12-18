@@ -20,7 +20,7 @@ class Coin {
     pos.add(vel);
 
     H += vH;
-    vH -= GRAV/2;
+    vH -= 0.5;
 
     if (H <= 3.5) {
       vH = -vH*0.4;

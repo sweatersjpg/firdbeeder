@@ -26,7 +26,7 @@ class Background {
       game.camera.x -= 5.0;
     }
 
-    if (mouseY > height-20 && game.camera.y+height < H && (mouseX < 124 || mouseX > 124+40)) {
+    if (mouseY > height-50 && game.camera.y+height < H && (mouseX < 124 || mouseX > 124+40)) {
       game.camera.y += 5.0;
     } else if (mouseY < 50 && game.camera.y > -30) {
       game.camera.y -= 5.0;

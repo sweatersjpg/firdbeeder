@@ -38,7 +38,7 @@ class UI {
     textSize(20);
     fill(255);
 
-    text("birds fed: "+game.score, 180, 24);
+    text("firds bed: "+game.score, 180, 24);
 
     if (game.costPerSeed * game.seedsPerClick > game.monies) fill(255, 80, 80);
     text(game.seedsPerClick+" costs: $" + game.seedsPerClick*game.costPerSeed, 28, 24);
